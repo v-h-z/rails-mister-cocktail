@@ -1,0 +1,20 @@
+<h2><%= @cocktail.name %></h2>
+<ul>
+  <% @cocktail.ingredients.each do |ingredient| %>
+    <li><%= ingredient.name %></li>
+  <% end %>
+</ul>
+
+<h3>Recipe</h3>
+<ul>
+  <% @cocktail.doses.each do |dose| %>
+    <li><span><%= dose.ingredient.name %> : <%= dose.description %></span> <span><%= link_to "delete", cocktail_dose_path(dose.cocktail, dose), method:"delete" %></span></li>
+  <% end %>
+</ul>
+<div class="footer my-5">
+  <!-- <span> <%= link_to "Add new dose", new_cocktail_dose_path(@cocktail) %> </span> -->
+  <div class="sub-form">
+    <p>Add a new dose</p>
+    <%= render "doses/form" %>
+  </div>
+</div>
