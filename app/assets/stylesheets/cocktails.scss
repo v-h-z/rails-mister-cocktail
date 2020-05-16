@@ -8,3 +8,13 @@ body {
 .sub-form {
   width: 300px;
 }
+
+.header {
+  height: 100vh;
+  &:hover { cursor: asset-url("down_cursor.svg"), auto;
+  }
+}
+
+.cocktail {
+  height: 50vh;
+}

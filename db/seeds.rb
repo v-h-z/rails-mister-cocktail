@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 puts 'firing up'
+Ingredient.destroy_all
 url = 'http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 list_serialized = open(url).read
 list = JSON.parse(list_serialized)
@@ -15,4 +16,6 @@ list['drinks'].each do |drink|
   ingredient.save
   puts "#{ingredient.name} created"
 end
+Ingredient.create(name: 'Campari')
+Ingredient.create(name: 'Martini Rosso')
 puts "That's all folks!"

@@ -1,5 +1,7 @@
-<ul>
+
   <% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+    <div class="cocktail flex-center <%= ["bg-green", "bg-orange", "bg-yellow", "bg-red", "bg-blue"].sample %>">
+      <h3 class="cocktail-name"><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
+    </div>
   <% end %>
-</ul>
+

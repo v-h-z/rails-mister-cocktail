@@ -12,8 +12,17 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class=<%= ["bg-green", "bg-orange", "bg-yellow", "bg-red", "bg-blue"].sample %>>
     <%= render "components/navbar" %>
+    <div class="header flex-center ">
+      <video loop muted autoplay class="fullscreen-bg__video">
+        <source src="https://player.vimeo.com/external/107907876.hd.mp4?s=12b950a55b1a9c95aa8e132039168eac9e0d2c5c&profile_id=119" type="video/mp4">
+      </video>
+      <div class="slide-title bg-white px-5" id="general-title">
+          <div class="title">MISTER COCKTAIL</div>
+          <!-- <p class="subtitle">Here you can put a whitty comment</p> -->
+        </div>
+    </div>
     <%= yield %>
   </body>
 </html>
