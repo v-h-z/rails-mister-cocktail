@@ -9,15 +9,17 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
 
-  <body class=<%= ["bg-green", "bg-orange", "bg-yellow", "bg-red", "bg-blue"].sample %>>
+  <body>
     <%= render "components/navbar" %>
-    <div class="header flex-center ">
-      <video loop muted autoplay class="fullscreen-bg__video">
+    <div class="header flex-center">
+      <!-- <video loop muted autoplay class="fullscreen-bg__video">
         <source src="https://player.vimeo.com/external/107907876.hd.mp4?s=12b950a55b1a9c95aa8e132039168eac9e0d2c5c&profile_id=119" type="video/mp4">
-      </video>
+      </video> -->
       <div class="slide-title bg-white px-5" id="general-title">
           <div class="title">MISTER COCKTAIL</div>
           <!-- <p class="subtitle">Here you can put a whitty comment</p> -->

@@ -5,6 +5,12 @@
   background: rgba(255,255,255,0.6);
   position: fixed;
   width: 100vw;
+  background-color: transparent;
+  transition: 0.5s background-color ease;
+}
+
+.navbar-lewagon-white {
+  background-color: white;
 }
 
 .navbar-lewagon .navbar-collapse {

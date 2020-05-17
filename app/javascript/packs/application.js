@@ -17,3 +17,16 @@ require("channels")
 import 'bootstrap';
 
 console.log("hello");
+
+
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+import { scrollFromHeader } from '../behaviors/scroll_from_header'
+
+window.SmoothScrollOptions = { animationTime: 1200 }
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  initUpdateNavbarOnScroll();
+  scrollFromHeader();
+  AOS.init();
+});

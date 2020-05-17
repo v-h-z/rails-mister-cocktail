@@ -1,6 +1,13 @@
 class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all
+    @cocktail = Cocktail.new
+    @dose = Dose.new
+  end
+
+  def search
+    @cocktails = Cocktail.where("UPPER(NAME) LIKE ?", "%" + search_params[:search].upcase + "%")
+    render :index
   end
 
   def show
@@ -25,5 +32,9 @@ class CocktailsController < ApplicationController
 
   def cocktail_params
     params.require(:cocktail).permit(:name)
+  end
+
+  def search_params
+    params.permit(:search)
   end
 end
