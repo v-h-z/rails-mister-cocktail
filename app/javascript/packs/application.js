@@ -21,6 +21,7 @@ console.log("hello");
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { scrollFromHeader } from '../behaviors/scroll_from_header'
+import { AddNewFormOnclick } from '../behaviors/add_new_form_onclick'
 
 window.SmoothScrollOptions = { animationTime: 1200 }
 
@@ -29,4 +30,5 @@ document.addEventListener('turbolinks:load', () => {
   initUpdateNavbarOnScroll();
   scrollFromHeader();
   AOS.init();
+  AddNewFormOnclick();
 });

@@ -2,14 +2,14 @@
   <% @cocktails.each_with_index do |cocktail, index| %>
     <div class="cocktail background-semitransp <%= ["bg-green", "bg-orange", "bg-yellow", "bg-red", "bg-blue"].sample %>" <%= 'id=first-cocktail' if index == 0 %>>
       <img src="https://source.unsplash.com/featured/?<%=cocktail.name.gsub(' ','')%>-cocktail " alt="">
-      <h3 class="cocktail-name" data-aos="fade-right"><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
+      <h3 class="cocktail-name" data-aos="fade-right"><%= cocktail.name %></h3>
       <div class="recipe">
         <ul data-aos="fade-left">
         <% cocktail.doses.each do |dose| %>
           <li><%= "#{dose.ingredient.name} - #{dose.description}" %></li>
         <% end %>
           <li id="link-new">Add new!</li>
-          <li class="disabled">
+          <li class="new-dose-form disabled">
             <%= simple_form_for [cocktail, @dose] do |f| %>
               <%= f.input :description %>
               <%= f.association :ingredient, collection: Ingredient.order(:name), prompt: "Choose an ingredient" %>
