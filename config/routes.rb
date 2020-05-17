@@ -4,4 +4,5 @@ Rails.application.routes.draw do
     resources :doses, only: [:new, :create, :destroy]
   end
   get '/search', to: 'cocktails#search'
+  root to: 'cocktails#root'
 end

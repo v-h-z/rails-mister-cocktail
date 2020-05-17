@@ -1,6 +1,6 @@
-
+<div class="cocktails">
   <% @cocktails.each_with_index do |cocktail, index| %>
-    <div class="cocktail background-semitransp <%= ["bg-green", "bg-orange", "bg-yellow", "bg-red", "bg-blue"].sample %>" <%= 'id=first-cocktail' if index == 0 %>>
+    <div class="cocktail background-semitransp <%= ["bg-green", "bg-orange", "bg-yellow", "bg-red", "bg-blue"].sample %>" <%= 'id=first-cocktail' if index == 0 %> >
       <img src="https://source.unsplash.com/featured/?<%=cocktail.name.gsub(' ','')%>-cocktail " alt="">
       <h3 class="cocktail-name" data-aos="fade-right"><%= cocktail.name %></h3>
       <div class="recipe">
@@ -8,11 +8,11 @@
         <% cocktail.doses.each do |dose| %>
           <li><%= "#{dose.ingredient.name} - #{dose.description}" %></li>
         <% end %>
-          <li id="link-new">Add new!</li>
+          <li id="link-new">Add a new ingredient!</li>
           <li class="new-dose-form disabled">
             <%= simple_form_for [cocktail, @dose] do |f| %>
-              <%= f.input :description %>
-              <%= f.association :ingredient, collection: Ingredient.order(:name), prompt: "Choose an ingredient" %>
+              <%= f.input :description, label: false, placeholder: "Dosage ?", :input_html => { 'rows' => 1} %>
+              <%= f.association :ingredient, collection: Ingredient.order(:name), prompt: "Choose an ingredient", label: false %>
               <%= f.submit class:"btn btn-primary" %>
             <% end %>
           </li>
@@ -20,4 +20,11 @@
       </div>
     </div>
   <% end %>
+</div>
+  <div id="add-new-cocktail" class="cocktail <%= ["bg-green", "bg-orange", "bg-yellow", "bg-red", "bg-blue"].sample %>">
+    <%= simple_form_for(@cocktail) do |f| %>
+      <%= f.input :name %>
+      <%= f.submit class:'btn btn-primary' %>
+    <% end %>
+  </div>
 

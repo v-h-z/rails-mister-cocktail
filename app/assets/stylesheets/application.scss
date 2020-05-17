@@ -90,8 +90,6 @@
 }
 
 #new_dose {
-  display: flex;
-  align-items: flex-end;
 }
 
 .disabled {
@@ -100,4 +98,13 @@
 
 #link-new:hover{
   cursor: copy;
+}
+
+.search-bar {
+  display: flex;
+}
+
+#submit-button {
+  // visibility: hidden;
+  display: none;
 }

@@ -7,6 +7,13 @@ const AddNewFormOnclick = () => {
       console.log(event.target.nextElementSibling);
       const form = event.target.nextElementSibling;
       form.classList.toggle('disabled');
+      console.log(link.innerText);
+      console.log(link);
+      if (link.innerText === 'Add a new ingredient!') {
+        link.innerText = 'X close';
+      } else {
+        link.innerText = 'Add a new ingredient!';
+      }
     })
   })
 }

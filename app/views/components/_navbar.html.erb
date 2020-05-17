@@ -1,9 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
 
-  <span class="mx-3 mt-3">
+  <span class="search-bar mx-3 mt-3">
     <%= form_tag(search_path, method: 'get', class: 'navbar-form navbar-right') do %>
-      <%= search_field_tag 'search', nil, class: 'form-control', placeholder: 'Search'  %>
-      <%= submit_tag "Submit", class: 'btn btn-default', :name => nil %>
+      <%= search_field_tag 'search', nil, class: 'form-control', placeholder: 'Search and press Enter'  %>
+      <%= submit_tag "Submit", class: 'btn btn-default', id: 'submit-button', :name => nil %>
     <% end %>
   </span>
   <div id="nav-right">
@@ -11,7 +11,7 @@
       <%= link_to "Full List", cocktails_path %>
     </span>
     <span class="mx-3">
-      <%= link_to "Add new", new_cocktail_path %>
+      <%= link_to "Add new", "#add-new-cocktail" %>
     </span>
   </div>
 </div>
