@@ -3,8 +3,8 @@
     <div class="cocktail background-semitransp <%= ["bg-green", "bg-orange", "bg-yellow", "bg-red", "bg-blue"].sample %>" <%= 'id=first-cocktail' if index == 0 %> >
       <img src="https://source.unsplash.com/featured/?<%=cocktail.name.gsub(' ','')%>-cocktail " alt="">
       <h3 class="cocktail-name" data-aos="fade-right"><%= cocktail.name %></h3>
-      <div class="recipe">
-        <ul data-aos="fade-left">
+      <div class="recipe" data-aos="fade-left">
+        <ul>
         <% cocktail.doses.each do |dose| %>
           <li><%= "#{dose.ingredient.name} - #{dose.description}" %></li>
         <% end %>
